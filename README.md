@@ -3,7 +3,7 @@
 This plugin output contains all disk devices without the loop device
 
 Sample output:
-
+```
 iostat|sda-r/s=14,77
 iostat|sda-rkB/s=465,00
 iostat|sda-rrqm/s=6,86
@@ -24,4 +24,4 @@ iostat|sda-d_await=1,05
 iostat|sda-dareq-sz=6826,22
 iostat|sda-aqu-sz=0,03
 iostat|sda-%util=2,54
-
+```
