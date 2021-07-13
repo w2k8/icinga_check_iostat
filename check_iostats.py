@@ -1,9 +1,12 @@
 #!/bin/python
-
+#
+# check_iostat.py
+#
+# version: 1.0
+# Author: w2k8
+#
 import subprocess
 import sys
-
-# encoding = 'utf-8'
 
 def runcommand():
     try:
@@ -24,7 +27,7 @@ def generate_output(data):
             zip_list = zip(device,stats)
             if not len(line) == 0:
                 for item in zip_list:
-                    if not str(item[0]) == 'Device' and not str(zip_list[0][1]).startswith('loop'):
+                    if not str(item[0]).startswith('Device') and not str(zip_list[0][1]).startswith('loop'):
                         print('iostat|{}-{}={}'.format(str(zip_list[0][1]), str(item[0]), str(item[1])))
         except:
             pass
@@ -32,6 +35,4 @@ def generate_output(data):
 
 if __name__ == "__main__":
     result = generate_output(runcommand())
-
-    # print(result)
     sys.exit(0)
